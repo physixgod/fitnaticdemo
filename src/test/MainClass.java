@@ -6,6 +6,7 @@
 package test;
 
 import entities.Competition;
+import entities.Sport_Type;
 import java.sql.Connection;
 import java.util.Date;
 import java.util.List;
@@ -18,12 +19,12 @@ import services.CompetitionCRUD;
  */
 public class MainClass {
     public static void main(String[] args) {
-        //MyConnection mc =new MyConnection();
-        
-       // Competition c = new Competition("Example Competition", new Date(), new Date(), "Example Location", "Example Description", "Example Sport Type", "Example Category", 50.0, 100, "Open", "Example Prizes");
+        MyConnection mc =new MyConnection();
+        Sport_Type st= new Sport_Type("football","Tunis",new Date(),new Date());
+      // Competition c = new Competition("Example Competition", new Date(), new Date(), "Example Location", "Example Description", "Example Sport Type", "Example Category", 50.0, 100, "Open", "Example Prizes");
 
         //Cr.ajouterCompetition(c);
-     CompetitionCRUD Cr = new CompetitionCRUD();
+    /* CompetitionCRUD Cr = new CompetitionCRUD();
 List<Competition> competitions = Cr.afficherCompetition();
 
 for (Competition c : competitions) {
@@ -41,7 +42,7 @@ for (Competition c : competitions) {
     System.out.println("Sport Type: " + c.getSportType());
     System.out.println();
 }
-
+*/
 
 
 
