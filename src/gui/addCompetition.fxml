@@ -1,10 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.URL?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="813.0" prefWidth="1280.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="gui.AddCompetitionController">
-    <stylesheets>
-        <URL value="@addcompetition.css" />
-    </stylesheets>
-</AnchorPane>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AddCompetitionController">
+   <top>
+      <AnchorPane prefHeight="118.0" prefWidth="1280.0" style="-fx-background-color: #999999;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="437.0" layoutY="35.0" prefHeight="48.0" prefWidth="437.0" text="New Competition Form" textFill="#4b5961" wrapText="true">
+               <font>
+                  <Font name="Times New Roman Bold" size="42.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </top>
+   <left>
+      <AnchorPane prefHeight="570.0" prefWidth="256.0" style="-fx-background-image: #0074E4;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="602.0" fitWidth="259.0" layoutX="-1.0" layoutY="2.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../images/competition.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane prefHeight="602.0" prefWidth="961.0" style="-fx-background-color: #FFFFFF;" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="nameTxt" layoutX="86.0" layoutY="57.0" prefHeight="43.0" prefWidth="266.0" promptText="Competiton Name" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="locationTxt" layoutX="86.0" layoutY="134.0" prefHeight="43.0" prefWidth="266.0" promptText="Location" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </TextField>
+            <DatePicker fx:id="endDate" layoutX="87.0" layoutY="453.0" prefHeight="43.0" prefWidth="265.0" promptText="End Date" style="-fx-background-color: transparent; -fx-border-color: #0589ff; -fx-border-width: 0px 0px 2px 0px;" />
+            <TextField fx:id="entryFeeTxt" layoutX="86.0" layoutY="211.0" prefHeight="43.0" prefWidth="266.0" promptText="Entry Fee (DT)" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="maxTxt" layoutX="86.0" layoutY="280.0" prefHeight="43.0" prefWidth="266.0" promptText="Max Participants " style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </TextField>
+            <ComboBox fx:id="sportType" editable="true" layoutX="529.0" layoutY="134.0" prefHeight="43.0" prefWidth="265.0" promptText="Sport Type" style="-fx-background-color: trasnparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" />
+            <ComboBox fx:id="competitonCategory" editable="true" layoutX="529.0" layoutY="57.0" prefHeight="43.0" prefWidth="265.0" promptText="Competition Category" style="-fx-background-color: trasnparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" />
+            <DatePicker fx:id="startDate" layoutX="87.0" layoutY="373.0" prefHeight="43.0" prefWidth="265.0" promptText="Start Date" style="-fx-background-color: transparent; -fx-border-color: #0589ff; -fx-border-width: 0px 0px 2px 0px;" />
+            <TextArea fx:id="desciption" layoutX="529.0" layoutY="223.0" prefHeight="251.0" prefWidth="427.0" promptText="Competition Description" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </TextArea>
+            <Button fx:id="addBtn" layoutX="745.0" layoutY="525.0" mnemonicParsing="false" onAction="#saveCompetition" prefHeight="45.0" prefWidth="228.0" style="-fx-background-color: #999999; -fx-background-radius: 15;" text="Add Competition" textFill="WHITE">
+               <font>
+                  <Font size="21.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

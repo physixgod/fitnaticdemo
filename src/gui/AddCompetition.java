@@ -6,6 +6,8 @@
 package gui;
 
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -23,13 +25,18 @@ import javafx.stage.Stage;
 public class AddCompetition extends Application {
     
     @Override
-    public void start(Stage primaryStage) throws IOException {
-        Parent root=FXMLLoader.load(getClass().getResource("addCompetiton.fxml"));
+    public void start(Stage primaryStage)  {   
+        try {
+        Parent root = FXMLLoader.load(getClass().getResource("addCompetition.fxml"));
         Scene scene = new Scene(root, 1280, 720);
         
-        primaryStage.setTitle("Hello World!");
+        primaryStage.setTitle("FitNatic");
         primaryStage.setScene(scene);
         primaryStage.show();
+        } catch (IOException ex) {
+             System.out.println(ex.getMessage());
+        }
+      
     }
 
     /**
