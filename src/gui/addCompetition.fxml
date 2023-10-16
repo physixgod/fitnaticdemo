@@ -15,18 +15,27 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AddCompetitionController">
    <top>
-      <AnchorPane prefHeight="118.0" prefWidth="1280.0" style="-fx-background-color: #999999;" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="backBtn" prefHeight="118.0" prefWidth="1280.0" style="-fx-background-color: #999999;" BorderPane.alignment="CENTER">
          <children>
             <Label layoutX="437.0" layoutY="35.0" prefHeight="48.0" prefWidth="437.0" text="New Competition Form" textFill="#4b5961" wrapText="true">
                <font>
                   <Font name="Times New Roman Bold" size="42.0" />
                </font>
             </Label>
+            <ImageView fitHeight="33.0" fitWidth="45.0" layoutX="90.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/back.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="88.0" layoutY="48.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="38.0" style="-fx-background-color: trasnparent;" />
          </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </AnchorPane>
    </top>
    <left>
-      <AnchorPane prefHeight="570.0" prefWidth="256.0" style="-fx-background-image: #0074E4;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="570.0" prefWidth="256.0" BorderPane.alignment="CENTER">
          <children>
             <ImageView fitHeight="602.0" fitWidth="259.0" layoutX="-1.0" layoutY="2.0" pickOnBounds="true">
                <image>
@@ -37,14 +46,9 @@
       </AnchorPane>
    </left>
    <center>
-      <AnchorPane prefHeight="602.0" prefWidth="961.0" style="-fx-background-color: #FFFFFF;" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="prizeTxt" prefHeight="602.0" prefWidth="961.0" style="-fx-background-color: #FFFFFF;" BorderPane.alignment="CENTER">
          <children>
             <TextField fx:id="nameTxt" layoutX="86.0" layoutY="57.0" prefHeight="43.0" prefWidth="266.0" promptText="Competiton Name" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;">
-               <font>
-                  <Font name="Verdana" size="14.0" />
-               </font>
-            </TextField>
-            <TextField fx:id="locationTxt" layoutX="86.0" layoutY="134.0" prefHeight="43.0" prefWidth="266.0" promptText="Location" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;">
                <font>
                   <Font name="Verdana" size="14.0" />
                </font>
@@ -60,15 +64,15 @@
                   <Font name="Verdana" size="14.0" />
                </font>
             </TextField>
-            <ComboBox fx:id="sportType" editable="true" layoutX="529.0" layoutY="134.0" prefHeight="43.0" prefWidth="265.0" promptText="Sport Type" style="-fx-background-color: trasnparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" />
-            <ComboBox fx:id="competitonCategory" editable="true" layoutX="529.0" layoutY="57.0" prefHeight="43.0" prefWidth="265.0" promptText="Competition Category" style="-fx-background-color: trasnparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" />
+            <ComboBox fx:id="sportType" editable="true" layoutX="529.0" layoutY="134.0" prefHeight="43.0" prefWidth="265.0" promptText="Sport Type" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" />
+            <ComboBox fx:id="competitonCategory" editable="true" layoutX="529.0" layoutY="57.0" prefHeight="43.0" prefWidth="265.0" promptText="Competition Category" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" />
             <DatePicker fx:id="startDate" layoutX="87.0" layoutY="373.0" prefHeight="43.0" prefWidth="265.0" promptText="Start Date" style="-fx-background-color: transparent; -fx-border-color: #0589ff; -fx-border-width: 0px 0px 2px 0px;" />
-            <TextArea fx:id="desciption" layoutX="529.0" layoutY="223.0" prefHeight="251.0" prefWidth="427.0" promptText="Competition Description" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;">
+            <TextArea fx:id="desciption" layoutX="529.0" layoutY="290.0" prefHeight="184.0" prefWidth="427.0" promptText="Competition Description" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;">
                <font>
                   <Font name="Verdana" size="14.0" />
                </font>
             </TextArea>
-            <Button fx:id="addBtn" layoutX="745.0" layoutY="525.0" mnemonicParsing="false" onAction="#saveCompetition" prefHeight="45.0" prefWidth="228.0" style="-fx-background-color: #999999; -fx-background-radius: 15;" text="Add Competition" textFill="WHITE">
+            <Button fx:id="addBtn" layoutX="745.0" layoutY="525.0" mnemonicParsing="false" onAction="#saveCompetition" prefHeight="45.0" prefWidth="228.0" style="-fx-background-color: #0598ff; -fx-background-radius: 15;" text="Add Competition" textFill="WHITE">
                <font>
                   <Font size="21.0" />
                </font>
@@ -76,6 +80,12 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
+            <ComboBox fx:id="locationTxt" editable="true" layoutX="87.0" layoutY="134.0" prefHeight="43.0" prefWidth="265.0" promptText="Location" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" />
+            <TextField fx:id="prize" layoutX="536.0" layoutY="211.0" prefHeight="43.0" prefWidth="266.0" promptText="Prize" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </TextField>
          </children>
       </AnchorPane>
    </center>

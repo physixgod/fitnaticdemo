@@ -20,13 +20,13 @@ public class Competition {
     private String description;
     private String sportType;
     private String competitionCategory;
-    private double entryFee;
+    private int entryFee;
     private int maxParticipants;
     private String status;
    
     private String prizes; 
     public Competition(int id, String name, Date startDate, Date endDate, String location, String description,
-                             String sportType, String competitionCategory, double entryFee, int maxParticipants,
+                             String sportType, String competitionCategory, int entryFee, int maxParticipants,
                              String status,String prizes) {
         this.id = id;
         this.name = name;
@@ -44,7 +44,7 @@ public class Competition {
         
     }
     public Competition( String name, Date startDate, Date endDate, String location, String description,
-                             String sportType, String competitionCategory, double entryFee, int maxParticipants,
+                             String sportType, String competitionCategory, int entryFee, int maxParticipants,
                              String status, String prizes) {
         this.name = name;
         this.startDate = startDate;
@@ -128,11 +128,11 @@ public class Competition {
         this.competitionCategory = competitionCategory;
     }
 
-    public double getEntryFee() {
+    public int getEntryFee() {
         return entryFee;
     }
 
-    public void setEntryFee(double entryFee) {
+    public void setEntryFee(int entryFee) {
         this.entryFee = entryFee;
     }
 

@@ -8,8 +8,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 public class CompetitionCRUD {
     public void ajouterCompetition(Competition c) {
@@ -23,7 +22,7 @@ public class CompetitionCRUD {
             preparedStatement.setString(5, c.getDescription());
             preparedStatement.setString(6, c.getSportType());
             preparedStatement.setString(7, c.getCompetitionCategory());
-            preparedStatement.setDouble(8, c.getEntryFee());
+            preparedStatement.setInt(8, c.getEntryFee());
             preparedStatement.setInt(9, c.getMaxParticipants());
             preparedStatement.setString(10, c.getStatus());
             preparedStatement.setString(11, c.getPrizes());

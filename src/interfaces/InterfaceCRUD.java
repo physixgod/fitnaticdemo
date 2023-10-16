@@ -6,7 +6,10 @@
 package interfaces;
 
 import entities.Competition;
+import entities.Sport_Type;
+import java.util.Date;
 import java.util.List;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -15,5 +18,8 @@ import java.util.List;
 public interface InterfaceCRUD<T> {
     public void ajouterCompetition(Competition T);
     public List<Competition> afficherCompetition();
+    public ObservableList<Sport_Type> getAllSport();
+    public ObservableList<Sport_Type> getFilteredSportTypes(String location);
+    public List<String> getAllLocations();
 }
 
