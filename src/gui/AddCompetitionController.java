@@ -19,6 +19,7 @@ import java.util.regex.Pattern;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -63,6 +64,10 @@ public class AddCompetitionController implements Initializable {
     private AnchorPane prizeTxt;
     @FXML
     private TextField prize;
+    @FXML
+    private AnchorPane backBtn;
+    @FXML
+    private Button returnBtn;
 
     /**
      * Initializes the controller class.
@@ -210,6 +215,9 @@ private void updateSportTypeComboBox() {
         pcd.ajouterCompetition(C);
             
         }
+    }
+        public void setReturnButtonAction(EventHandler<ActionEvent> action) {
+        returnBtn.setOnAction(action);
     }
 
     private ObservableList<Sport_Type> getFilteredSportTypes(String text) {

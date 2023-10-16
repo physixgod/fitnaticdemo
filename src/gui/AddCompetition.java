@@ -1,49 +1,45 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package gui;
 
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import java.io.IOException;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 
-/**
- *
- * @author toufa
- */
 public class AddCompetition extends Application {
-    
+
     @Override
-    public void start(Stage primaryStage)  {   
+    public void start(Stage primaryStage) {
         try {
-        Parent root = FXMLLoader.load(getClass().getResource("addCompetition.fxml"));
-        Scene scene = new Scene(root, 1280, 720);
-        
-        primaryStage.setTitle("FitNatic");
-        primaryStage.setScene(scene);
-        primaryStage.show();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("addCompetition.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root, 1280, 720);
+            AddCompetitionController firstController = loader.getController();
+            primaryStage.setTitle("FitNatic");
+            primaryStage.setScene(scene);
+            primaryStage.show();
+
+            firstController.setReturnButtonAction(event -> {
+                try {
+                    // Load the new FXML file for the second interface
+                    FXMLLoader secondLoader = new FXMLLoader(getClass().getResource("displayCompetiton.fxml"));
+                    Parent secondRoot = secondLoader.load();
+
+                    // Set the new interface as the content of the scene
+                    scene.setRoot(secondRoot);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
         } catch (IOException ex) {
-             System.out.println(ex.getMessage());
+            System.out.println(ex.getMessage());
         }
-      
     }
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         launch(args);
     }
-    
 }

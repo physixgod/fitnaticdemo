@@ -1,0 +1,31 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+/* Style the TableView */
+/* Set background color */
+.table-view {
+    -fx-background-color: #0598ff, white;
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 0;
+}
+
+/* Set text color */
+.table-cell {
+    -fx-text-fill: black;
+}
+
+/* Set header background color */
+.table-header {
+    -fx-background-color: #0598ff;
+}
+
+/* Set header text color */
+.column-header, .table-header .label {
+    -fx-text-fill: white;
+}
+
+
+}

@@ -60,4 +60,45 @@ public class CompetitionCRUD {
         }
         return myList;
     }
+        public List<Competition> getAllCompetitions(){
+       List<Competition> myList = new ArrayList<>();
+        try {
+        String query2="SELECT * FROM Competition";
+        Statement st = new MyConnection().getCnx().createStatement();
+        ResultSet rs= st.executeQuery(query2);
+        while(rs.next()){
+            Competition c = new Competition();
+            c.setName(rs.getString("name"));
+            c.setStartDate(rs.getDate("start_date"));
+            c.setEndDate(rs.getDate("end_date"));
+            c.setLocation(rs.getString("location"));
+            c.setCompetitionCategory(rs.getString("competitionCategory"));
+            c.setEntryFee(rs.getInt("entryFee"));
+            c.setMaxParticipants(rs.getInt("maxParticipants"));
+            c.setStatus(rs.getString("status"));
+            c.setPrizes(rs.getString("prize"));
+            c.setSportType(rs.getString("sportType"));
+            myList.add(c);
+            
+        }
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+        return myList;
+    }
+        public boolean deleteCompetition(Competition competition) {
+    try {
+        String query = "DELETE FROM Competition WHERE id = ?";
+        PreparedStatement preparedStatement = MyConnection.getInstance().getCnx().prepareStatement(query);
+        preparedStatement.setInt(1, competition.getId()); // Assuming 'id' is the unique identifier
+
+        int rowsAffected = preparedStatement.executeUpdate();
+        
+        return rowsAffected > 0;
+    } catch (SQLException ex) {
+        System.err.println(ex.getMessage());
+        return false;
+    }
+}
+
 }
