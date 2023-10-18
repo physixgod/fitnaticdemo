@@ -13,15 +13,22 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import services.CompetitionCRUD;
 import entities.Competition;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Optional;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextInputDialog;
+import javafx.stage.Stage;
 import utils.MyConnection;
 
 
@@ -57,6 +64,8 @@ public class DisplayCompetitonController implements Initializable {
     private Button deleteBtn;
     @FXML
     private Button editBtn;
+    @FXML
+    private Button returnBtn;
 
 
     @Override
@@ -96,7 +105,7 @@ public class DisplayCompetitonController implements Initializable {
         // Add the updated data to the ObservableList
         competitions.addAll(competitionList);
 
-        // Trigger a refresh of the TableView
+        
         tv.refresh();
     }
 
@@ -158,6 +167,9 @@ private String showEditDialog(String currentStatus) {
         return null;
     }
 }
+        public void setReturnButtonAction(EventHandler<ActionEvent> action) {
+        returnBtn.setOnAction(action);
+    }
     @FXML
     private void editCompetiotn(ActionEvent event) {
     Competition selectedCompetition = tv.getSelectionModel().getSelectedItem();
@@ -180,6 +192,21 @@ private String showEditDialog(String currentStatus) {
 } catch (SQLException ex) {
     System.err.println(ex.getMessage());
 }
+
+    }
+}
+
+    @FXML
+private void back(ActionEvent event) {
+    try {
+ 
+        Parent page =FXMLLoader.load(getClass().getResource("addSport.fxml"));
+        Scene scene=new Scene(page);
+        Stage appStage =(Stage) ((Node)event.getSource()).getScene().getWindow();
+        appStage.setScene(scene);
+        appStage.show();
+    } catch (IOException e) {
+        e.printStackTrace();
 
     }
 }

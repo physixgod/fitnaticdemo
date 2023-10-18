@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="gui.AddSportController">
+    <stylesheets>
+        <URL value="@addsport.css" />
+    </stylesheets>
+   <children>
+      <AnchorPane fx:id="prizeTxt" layoutX="10.0" prefHeight="730.0" prefWidth="1280.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <TextField fx:id="sportName" layoutX="657.0" layoutY="180.0" prefHeight="43.0" prefWidth="266.0" promptText="Sport Name" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </TextField>
+            <DatePicker fx:id="end" layoutX="658.0" layoutY="519.0" prefHeight="43.0" prefWidth="265.0" promptText="End Date" style="-fx-background-color: transparent; -fx-border-color: #0589ff; -fx-border-width: 0px 0px 2px 0px;" />
+            <DatePicker fx:id="start" layoutX="658.0" layoutY="404.0" prefHeight="43.0" prefWidth="265.0" promptText="Start Date" style="-fx-background-color: transparent; -fx-border-color: #0589ff; -fx-border-width: 0px 0px 2px 0px;" />
+            <TextField fx:id="location" layoutX="657.0" layoutY="290.0" prefHeight="43.0" prefWidth="266.0" promptText="Location" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;">
+               <font>
+                  <Font name="Verdana" size="14.0" />
+               </font>
+            </TextField>
+            <Button fx:id="addBtn" layoutX="977.0" layoutY="628.0" mnemonicParsing="false" onAction="#saveSport" prefHeight="46.0" prefWidth="223.0" style="-fx-background-color: #0598ff; -fx-background-radius: 15;" text="Add Sport" textFill="WHITE">
+               <font>
+                  <Font size="21.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="718.0" prefWidth="419.0">
+         <children>
+            <ImageView fitHeight="602.0" fitWidth="473.0" layoutX="-9.0" layoutY="116.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../images/sports.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="backBtn" layoutY="1.0" prefHeight="127.0" prefWidth="1290.0" style="-fx-background-color: #999999;">
+         <children>
+            <Label layoutX="460.0" layoutY="35.0" prefHeight="48.0" prefWidth="437.0" text="New Sport Type" textFill="#4b5961" wrapText="true">
+               <font>
+                  <Font name="Times New Roman Bold" size="42.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="33.0" fitWidth="45.0" layoutX="90.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/back.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="returnBtn" layoutX="88.0" layoutY="48.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="38.0" style="-fx-background-color: transparent;">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </AnchorPane>
+   </children>
+</AnchorPane>

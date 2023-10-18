@@ -86,5 +86,26 @@ public ObservableList<Sport_Type> getFilteredSportTypes(String location) {
 
         return locations;
     }
-
+        public void ajouterSportType(Sport_Type sportType) {
+        try {
+            String query = "INSERT INTO sport_type (name, location, start_date, end_date) VALUES (?, ?, ?, ?)";
+            PreparedStatement preparedStatement = MyConnection.getInstance().getCnx().prepareStatement(query);
+            preparedStatement.setString(1, sportType.getName());
+            preparedStatement.setString(2, sportType.getLocation());
+            preparedStatement.setDate(3, new java.sql.Date(sportType.getStartDate().getTime()));
+            preparedStatement.setDate(4, new java.sql.Date(sportType.getEndDate().getTime()));
+            preparedStatement.executeUpdate();
+            System.out.println("Sport Type Added");
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+    }
 }
+
+
+
+
+
+
+
+

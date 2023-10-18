@@ -213,6 +213,7 @@ private void updateSportTypeComboBox() {
         );
         CompetitionCRUD pcd=new CompetitionCRUD();
         pcd.ajouterCompetition(C);
+        show();
             
         }
     }
@@ -222,6 +223,14 @@ private void updateSportTypeComboBox() {
 
     private ObservableList<Sport_Type> getFilteredSportTypes(String text) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+        public void show() {
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle("Success");
+        alert.setHeaderText(null);
+        alert.setContentText("Competition Added Successfully");
+
+        alert.showAndWait();
     }
 
 
