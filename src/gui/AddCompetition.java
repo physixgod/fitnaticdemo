@@ -22,17 +22,17 @@ public class AddCompetition extends Application {
             primaryStage.setScene(scene);
             primaryStage.show();
 
-            firstController.setReturnButtonAction(event -> {
-                try {
-                    // Load the new FXML file for the second interface
-                    FXMLLoader secondLoader = new FXMLLoader(getClass().getResource("displayCompetiton.fxml"));
-                    Parent secondRoot = secondLoader.load();
+                firstController.setReturnButtonAction(event -> {
+                    try {
+                        // Load the new FXML file for the second interface
+                        FXMLLoader secondLoader = new FXMLLoader(getClass().getResource("displayCompetiton.fxml"));
+                        Parent secondRoot = secondLoader.load();
 
-                    // Set the new interface as the content of the scene
-                    scene.setRoot(secondRoot);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                        // Set the new interface as the content of the scene
+                        scene.setRoot(secondRoot);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
             });
         } catch (IOException ex) {
             System.out.println(ex.getMessage());

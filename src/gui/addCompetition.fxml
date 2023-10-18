@@ -75,7 +75,7 @@
                   <Font name="Verdana" size="14.0" />
                </font>
             </TextArea>
-            <Button fx:id="addBtn" layoutX="745.0" layoutY="525.0" mnemonicParsing="false" onAction="#saveCompetition" prefHeight="45.0" prefWidth="228.0" style="-fx-background-color: #0598ff; -fx-background-radius: 15;" text="Add Competition" textFill="WHITE">
+            <Button fx:id="addBtn" layoutX="745.0" layoutY="524.0" mnemonicParsing="false" onAction="#saveCompetition" prefHeight="46.0" prefWidth="223.0" style="-fx-background-color: #0598ff; -fx-background-radius: 15;" text="Add Competition" textFill="WHITE">
                <font>
                   <Font size="21.0" />
                </font>

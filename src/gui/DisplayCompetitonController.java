@@ -13,8 +13,16 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import services.CompetitionCRUD;
 import entities.Competition;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Optional;
 import javafx.event.ActionEvent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextInputDialog;
+import utils.MyConnection;
 
 
 public class DisplayCompetitonController implements Initializable {
@@ -47,6 +55,8 @@ public class DisplayCompetitonController implements Initializable {
     private ObservableList<Competition> competitions = FXCollections.observableArrayList();
     @FXML
     private Button deleteBtn;
+    @FXML
+    private Button editBtn;
 
 
     @Override
@@ -75,21 +85,102 @@ public class DisplayCompetitonController implements Initializable {
         List<Competition> competitionList = dataAccess.getAllCompetitions();
         competitions.addAll(competitionList);
     }
+    private void refreshTable() {
+        // Clear the current data from the ObservableList
+        competitions.clear();
+
+        // Fetch the updated data from the database
+        CompetitionCRUD dataAccess = new CompetitionCRUD();
+        List<Competition> competitionList = dataAccess.getAllCompetitions();
+
+        // Add the updated data to the ObservableList
+        competitions.addAll(competitionList);
+
+        // Trigger a refresh of the TableView
+        tv.refresh();
+    }
 
     @FXML
-    private void removeCompetition(ActionEvent event) {
-                Competition selectedCompetition = tv.getSelectionModel().getSelectedItem();
-        if (selectedCompetition != null) {
-            // Delete the selected competition from the database
-            boolean deleted = deleteCompetition(selectedCompetition);
+private void removeCompetition(ActionEvent event) throws SQLException {
+    Competition selectedCompetition = tv.getSelectionModel().getSelectedItem();
+    CompetitionCRUD Cr = new CompetitionCRUD();
+
+    if (selectedCompetition != null) {
+        String query = "DELETE FROM Competition WHERE name = ?";
+        try (Connection connection = MyConnection.getInstance().getCnx();
+             PreparedStatement ps = connection.prepareStatement(query)) {
+
+           
+           ps.setString(1, selectedCompetition.getName());
             
-            if (deleted) {
-                // Remove the selected competition from the TableView
+            int rowsAffected = ps.executeUpdate();
+
+            if (rowsAffected > 0) {
+                
                 tv.getItems().remove(selectedCompetition);
             } else {
-                // Handle deletion error
-                // You can display an error message here
+   
+                displayError("Failed to delete the competition.");
             }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            displayError("Database error: " + ex.getMessage());
         }
+    } else {
+        displayError("Please select the competition you want to delete.");
     }
+}
+
+    private void displayError(String message) {
+    Alert alert = new Alert(Alert.AlertType.ERROR);
+    alert.setTitle("Error");
+    alert.setHeaderText(null);
+    alert.setContentText(message);
+
+    alert.showAndWait();
+}
+
+    private boolean deleteCompetition(Competition selectedCompetition) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+private String showEditDialog(String currentStatus) {
+    TextInputDialog dialog = new TextInputDialog(currentStatus);
+    dialog.setTitle("Edit");
+    dialog.setHeaderText("Edit Status");
+    dialog.setContentText("New Status:");
+    Optional<String> result = dialog.showAndWait();
+
+    if (result.isPresent()) {
+        
+        return result.get();
+    } else {
+        return null;
+    }
+}
+    @FXML
+    private void editCompetiotn(ActionEvent event) {
+    Competition selectedCompetition = tv.getSelectionModel().getSelectedItem();
+    String name = selectedCompetition.getName();
+    String newStatus = showEditDialog(selectedCompetition.getStatus());
+    System.out.println(name);
+    if (newStatus != null) {
+    try {
+        Statement st = new MyConnection().getCnx().createStatement();
+        String query = "UPDATE Competition SET status = '" + newStatus + "' WHERE name = '" + name + "'";
+
+        int rowsAffected = st.executeUpdate(query);
+        refreshTable();
+    if (rowsAffected > 0) {
+        tv.refresh();
+        status.setCellValueFactory(new PropertyValueFactory<>("status"));
+    } else {
+        displayError("Failed to update competition status.");
+    }
+} catch (SQLException ex) {
+    System.err.println(ex.getMessage());
+}
+
+    }
+}
 }

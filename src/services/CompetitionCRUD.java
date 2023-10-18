@@ -88,7 +88,7 @@ public class CompetitionCRUD {
     }
         public boolean deleteCompetition(Competition competition) {
     try {
-        String query = "DELETE FROM Competition WHERE id = ?";
+        String query="DELETE FROM Competition WHERE id = '" + competition.getId() + "'";
         PreparedStatement preparedStatement = MyConnection.getInstance().getCnx().prepareStatement(query);
         preparedStatement.setInt(1, competition.getId()); // Assuming 'id' is the unique identifier
 
@@ -98,7 +98,22 @@ public class CompetitionCRUD {
     } catch (SQLException ex) {
         System.err.println(ex.getMessage());
         return false;
+    }}
+private boolean updateCompetitionStatus(String name, String newStatus) {
+    try {
+        Statement st = new MyConnection().getCnx().createStatement();
+        String query = "UPDATE Competition SET status = '" + newStatus + "' WHERE name = '" + name + "'";
+
+        int rowsAffected = st.executeUpdate(query);
+        return rowsAffected > 0;
+    } catch (SQLException ex) {
+        System.err.println(ex.getMessage());
+        return false;
     }
-}
+
 
 }
+}
+        
+
+
