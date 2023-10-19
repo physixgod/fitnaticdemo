@@ -7,6 +7,7 @@ package gui;
 
 import entities.Competition;
 import entities.Sport_Type;
+import java.io.IOException;
 import java.net.URL;
 import java.time.Instant;
 import java.time.LocalDate;
@@ -21,7 +22,11 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
@@ -30,6 +35,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import services.SportTypeCRUD;
 import services.CompetitionCRUD;
 
@@ -188,10 +194,10 @@ private void updateSportTypeComboBox() {
         String selectedCompetitionCategory = competitonCategory.getValue();
         String prix=prize.getText();
         // Make sure to convert the date fields from LocalDate to Date
-        Date startDate = Date.from(localStartDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
-        Date endDate = Date.from(localEndDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
-        java.sql.Date sqlStartDate = new java.sql.Date(startDate.getTime());
-        java.sql.Date sqlEndDate = new java.sql.Date(endDate.getTime());
+        Date startDate1 = Date.from(localStartDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+        Date endDate1 = Date.from(localEndDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+        java.sql.Date sqlStartDate = new java.sql.Date(startDate1.getTime());
+        java.sql.Date sqlEndDate = new java.sql.Date(endDate1.getTime());
 
         // You can extract and convert the other fields as needed
 
@@ -214,12 +220,20 @@ private void updateSportTypeComboBox() {
         CompetitionCRUD pcd=new CompetitionCRUD();
         pcd.ajouterCompetition(C);
         show();
+    nameTxt.setText("");  
+    locationTxt.setValue(null);  
+    desciption.setText("");  
+    sportType.setValue(null); 
+    competitonCategory.setValue("");  
+    prize.setText(""); 
+    entryFeeTxt.setText(""); 
+    maxTxt.setText("");
+    startDate.setValue(null);
+    endDate.setValue(null);
             
         }
     }
-        public void setReturnButtonAction(EventHandler<ActionEvent> action) {
-        returnBtn.setOnAction(action);
-    }
+
 
     private ObservableList<Sport_Type> getFilteredSportTypes(String text) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
@@ -231,6 +245,21 @@ private void updateSportTypeComboBox() {
         alert.setContentText("Competition Added Successfully");
 
         alert.showAndWait();
+    }
+
+    @FXML
+    private void back(ActionEvent event) {
+            try {
+ 
+        Parent page =FXMLLoader.load(getClass().getResource("menuCompetition.fxml"));
+        Scene scene=new Scene(page);
+        Stage appStage =(Stage) ((Node)event.getSource()).getScene().getWindow();
+        appStage.setScene(scene);
+        appStage.show();
+    } catch (IOException e) {
+        e.printStackTrace();
+
+    }
     }
 
 

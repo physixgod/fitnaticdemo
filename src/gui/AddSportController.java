@@ -7,6 +7,7 @@ package gui;
 
 import entities.Sport_Type;
 import java.awt.Desktop;
+import java.io.IOException;
 import java.net.URI;
 import java.net.URL;
 import java.time.LocalDate;
@@ -17,12 +18,17 @@ import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import services.SportTypeCRUD;
 
 /**
@@ -73,6 +79,10 @@ public class AddSportController implements Initializable {
         SportTypeCRUD spc=new SportTypeCRUD();
         spc.ajouterSportType(sp);
         show();
+        location.setText("");
+        sportName.setText("");
+        start.setValue(null);
+        end.setValue(null);
         }
     }
     private boolean validateForm() {
@@ -116,6 +126,21 @@ public class AddSportController implements Initializable {
         alert.setContentText("Sport Type Added Successfully");
 
         alert.showAndWait();
+    }
+
+    @FXML
+    private void goToMenu(ActionEvent event) throws IOException {
+    try {
+ 
+        Parent page =FXMLLoader.load(getClass().getResource("menuCompetition.fxml"));
+        Scene scene=new Scene(page);
+        Stage appStage =(Stage) ((Node)event.getSource()).getScene().getWindow();
+        appStage.setScene(scene);
+        appStage.show();
+    } catch (IOException e) {
+        e.printStackTrace();
+
+    }
     }
     
 }

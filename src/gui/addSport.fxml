@@ -61,7 +61,7 @@
                   <Image url="@../images/back.png" />
                </image>
             </ImageView>
-            <Button fx:id="returnBtn" layoutX="88.0" layoutY="48.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="38.0" style="-fx-background-color: transparent;">
+            <Button fx:id="returnBtn" layoutX="88.0" layoutY="48.0" mnemonicParsing="false" onAction="#goToMenu" prefHeight="31.0" prefWidth="38.0" style="-fx-background-color: transparent;">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>

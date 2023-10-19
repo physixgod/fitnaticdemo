@@ -1,7 +1,9 @@
 /*
  * Empty Stylesheet file.
  */
-
+.button:hover {
+    -fx-background-color: black;
 .mainFxmlClass {
 
+}
 }

@@ -200,7 +200,7 @@ private String showEditDialog(String currentStatus) {
 private void back(ActionEvent event) {
     try {
  
-        Parent page =FXMLLoader.load(getClass().getResource("addSport.fxml"));
+        Parent page =FXMLLoader.load(getClass().getResource("menuCompetition.fxml"));
         Scene scene=new Scene(page);
         Stage appStage =(Stage) ((Node)event.getSource()).getScene().getWindow();
         appStage.setScene(scene);
