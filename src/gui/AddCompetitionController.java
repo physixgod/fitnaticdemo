@@ -193,13 +193,13 @@ private void updateSportTypeComboBox() {
         String selectedSportTypeName = selectedSportType.getName();
         String selectedCompetitionCategory = competitonCategory.getValue();
         String prix=prize.getText();
-        // Make sure to convert the date fields from LocalDate to Date
+      
         Date startDate1 = Date.from(localStartDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
         Date endDate1 = Date.from(localEndDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
         java.sql.Date sqlStartDate = new java.sql.Date(startDate1.getTime());
         java.sql.Date sqlEndDate = new java.sql.Date(endDate1.getTime());
 
-        // You can extract and convert the other fields as needed
+        
 
         int entryFee = Integer.parseInt(entryFeeTxt.getText()); 
         int maxParticipants = Integer.parseInt(maxTxt.getText()); 
@@ -214,8 +214,8 @@ private void updateSportTypeComboBox() {
             selectedCompetitionCategory,
             entryFee,
             maxParticipants,
-            "Not Started", // Set your status here
-            prix   // Set your prizes here
+            "Not Started", 
+            prix   
         );
         CompetitionCRUD pcd=new CompetitionCRUD();
         pcd.ajouterCompetition(C);

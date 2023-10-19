@@ -57,8 +57,6 @@ public ObservableList<Sport_Type> getFilteredSportTypes(String location) {
             Date startDate = rs.getDate("start_date");
             Date endDate = rs.getDate("end_date");
             Sport_Type sportType = new Sport_Type(id, name, location, startDate, endDate);
-
-            // Add the filtered Sport_Type to the list
             filteredSportTypes.add(sportType);
         }
     } catch (SQLException e) {
@@ -69,8 +67,6 @@ public ObservableList<Sport_Type> getFilteredSportTypes(String location) {
 }
     public List<String> getAllLocations() {
         List<String> locations = new ArrayList<>();
-
-        // Your SQL query to retrieve distinct locations
         String query = "SELECT DISTINCT location FROM sport_type";
 
         try (

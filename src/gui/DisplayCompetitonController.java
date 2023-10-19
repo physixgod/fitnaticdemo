@@ -26,7 +26,9 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextInputDialog;
 import javafx.stage.Stage;
 import utils.MyConnection;
@@ -82,10 +84,7 @@ public class DisplayCompetitonController implements Initializable {
         sport_type.setCellValueFactory(new PropertyValueFactory<>("sportType"));
         locationTxt.setCellValueFactory(new PropertyValueFactory<>("location"));
         
-        // Load competitions from the database and populate the table
         loadCompetitionsFromDatabase();
-
-        // Set the items for the TableView
         tv.setItems(competitions);
     }
 
@@ -95,17 +94,10 @@ public class DisplayCompetitonController implements Initializable {
         competitions.addAll(competitionList);
     }
     private void refreshTable() {
-        // Clear the current data from the ObservableList
         competitions.clear();
-
-        // Fetch the updated data from the database
         CompetitionCRUD dataAccess = new CompetitionCRUD();
         List<Competition> competitionList = dataAccess.getAllCompetitions();
-
-        // Add the updated data to the ObservableList
-        competitions.addAll(competitionList);
-
-        
+        competitions.addAll(competitionList);  
         tv.refresh();
     }
 
@@ -115,7 +107,14 @@ private void removeCompetition(ActionEvent event) throws SQLException {
     CompetitionCRUD Cr = new CompetitionCRUD();
 
     if (selectedCompetition != null) {
+        Alert confirmation = new Alert(AlertType.CONFIRMATION);
+        confirmation.setTitle("Confirmation");
+        confirmation.setHeaderText("Are you sure you want to remove this competition?");
+        confirmation.setContentText("Click OK to proceed with the deletion.");
+
+        Optional<ButtonType> result = confirmation.showAndWait();
         String query = "DELETE FROM Competition WHERE name = ?";
+        if (result.isPresent() && result.get() == ButtonType.OK) {
         try (Connection connection = MyConnection.getInstance().getCnx();
              PreparedStatement ps = connection.prepareStatement(query)) {
 
@@ -135,9 +134,10 @@ private void removeCompetition(ActionEvent event) throws SQLException {
             ex.printStackTrace();
             displayError("Database error: " + ex.getMessage());
         }
-    } else {
+    }} else {
         displayError("Please select the competition you want to delete.");
     }
+    
 }
 
     private void displayError(String message) {
