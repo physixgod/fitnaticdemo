@@ -32,6 +32,20 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
+            <Button fx:id="ans" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="100.0" mnemonicParsing="false" onAction="#addsport" prefHeight="90.0" prefWidth="320.0" style="-fx-background-color: transparent;" text="  Add New Sport">
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+               <font>
+                  <Font name="Times New Roman" size="22.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView glyphName="UNLOCK" size="35" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
             <Button fx:id="mc" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#manage" prefHeight="90.0" prefWidth="320.0" style="-fx-background-color: transparent;" text="  Manage Competitions">
                <padding>
                   <Insets left="40.0" />
@@ -46,7 +60,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="ans" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="100.0" mnemonicParsing="false" onAction="#addsport" prefHeight="90.0" prefWidth="320.0" style="-fx-background-color: transparent;" text="  Add New Sport">
+            <Button fx:id="managesports" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="190.0" mnemonicParsing="false" onAction="#editSports" prefHeight="90.0" prefWidth="320.0" style="-fx-background-color: transparent;" text="  Manage Sports">
                <padding>
                   <Insets left="40.0" />
                </padding>
@@ -54,7 +68,7 @@
                   <Font name="Times New Roman" size="22.0" />
                </font>
                <graphic>
-                  <FontAwesomeIconView glyphName="UNLOCK" size="35" />
+                  <FontAwesomeIconView glyphName="EDIT" size="35" />
                </graphic>
                <cursor>
                   <Cursor fx:constant="HAND" />

@@ -6,8 +6,10 @@ import utils.MyConnection;
 import entities.Competition;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import javafx.scene.control.DatePicker;
 
 
 public class CompetitionCRUD {
@@ -113,6 +115,9 @@ private boolean updateCompetitionStatus(String name, String newStatus) {
 
 
 }
+     public static boolean datep(DatePicker startDatePicker, DatePicker endDatePicker) {
+        return startDatePicker.getValue().isBefore(endDatePicker.getValue());
+    }
 }
         
 

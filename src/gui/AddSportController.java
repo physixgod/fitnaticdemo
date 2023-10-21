@@ -29,6 +29,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import static services.CompetitionCRUD.datep;
 import services.SportTypeCRUD;
 
 /**
@@ -103,6 +104,9 @@ public class AddSportController implements Initializable {
         if (end.getValue() == null) {
             errors.add("End date is required.");
         }
+                if(datep(start,end) == false){
+            errors.add("End Date should come after the Start Date.");
+                }
 
     if (!errors.isEmpty()) {
         displayError("Please correct the following errors:\n" + String.join("\n", errors));

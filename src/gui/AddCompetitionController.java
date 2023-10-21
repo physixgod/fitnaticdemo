@@ -38,6 +38,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import services.SportTypeCRUD;
 import services.CompetitionCRUD;
+import static services.CompetitionCRUD.datep;
 
 /**
  * FXML Controller class
@@ -145,7 +146,10 @@ private boolean validateForm() {
         }
         if (prize.getText().isEmpty()) {
             errors.add("Prize is required.");
-        } else {
+        }
+        if(datep(startDate,endDate) == false){
+            errors.add("End Date should come after the Start Date.");
+        }else {
         }
 
     if (!errors.isEmpty()) {
@@ -155,6 +159,7 @@ private boolean validateForm() {
             return true;
         }
     }
+
 
     private boolean isNumeric(String input) {
         return NUMBER_PATTERN.matcher(input).matches();
