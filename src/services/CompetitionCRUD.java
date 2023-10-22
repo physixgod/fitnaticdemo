@@ -118,6 +118,36 @@ private boolean updateCompetitionStatus(String name, String newStatus) {
      public static boolean datep(DatePicker startDatePicker, DatePicker endDatePicker) {
         return startDatePicker.getValue().isBefore(endDatePicker.getValue());
     }
+ public List<Competition> getTwoLastOpenCompetitions() {
+    List<Competition> competitionList = new ArrayList<>();
+
+    try {
+        String query = "SELECT * FROM Competition WHERE status = 'open' ORDER BY id DESC LIMIT 2";
+        PreparedStatement preparedStatement = MyConnection.getInstance().getCnx().prepareStatement(query);
+        ResultSet resultSet = preparedStatement.executeQuery();
+
+        while (resultSet.next()) {
+            Competition c = new Competition();
+            c.setId(resultSet.getInt("id"));
+            c.setName(resultSet.getString("name"));
+            c.setStartDate(resultSet.getDate("start_date"));
+            c.setEndDate(resultSet.getDate("end_date"));
+            c.setLocation(resultSet.getString("location"));
+            c.setDescription(resultSet.getString("description"));
+            c.setCompetitionCategory(resultSet.getString("competitionCategory"));
+            c.setEntryFee(resultSet.getInt("entryFee"));
+            c.setMaxParticipants(resultSet.getInt("maxParticipants"));
+            c.setStatus(resultSet.getString("status"));
+            c.setPrizes(resultSet.getString("prize"));
+            c.setSportType(resultSet.getString("sportType"));
+            competitionList.add(c);
+        }
+    } catch (SQLException ex) {
+        ex.printStackTrace();
+    }
+
+    return competitionList;
+}
 }
         
 

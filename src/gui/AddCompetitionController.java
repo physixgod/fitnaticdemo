@@ -219,7 +219,7 @@ private void updateSportTypeComboBox() {
             selectedCompetitionCategory,
             entryFee,
             maxParticipants,
-            "Not Started", 
+            "Open", 
             prix   
         );
         CompetitionCRUD pcd=new CompetitionCRUD();

@@ -57,7 +57,7 @@
             <Image url="@../images/list_management_large.png" />
          </image>
       </ImageView>
-      <Button fx:id="deleteBtn" layoutX="631.0" layoutY="182.0" mnemonicParsing="false" onAction="#removeCompetition" prefHeight="46.0" prefWidth="161.0" style="-fx-background-color: #0598ff; -fx-background-radius: 15;" text="DELETE" textFill="WHITE">
+      <Button fx:id="deleteBtn" layoutX="631.0" layoutY="182.0" mnemonicParsing="false" onAction="#removeCompetition" prefHeight="46.0" prefWidth="161.0" style="-fx-background-color: #0598ff; -fx-background-radius: 15;" text="Delete" textFill="WHITE">
          <font>
             <Font size="21.0" />
          </font>
@@ -65,7 +65,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button fx:id="editBtn" layoutX="397.0" layoutY="182.0" mnemonicParsing="false" onAction="#editCompetiotn" prefHeight="46.0" prefWidth="161.0" style="-fx-background-color: #0598ff; -fx-background-radius: 15;" text="EDIT STATUS" textFill="WHITE">
+      <Button fx:id="editBtn" layoutX="397.0" layoutY="182.0" mnemonicParsing="false" onAction="#editCompetiotn" prefHeight="46.0" prefWidth="161.0" style="-fx-background-color: #0598ff; -fx-background-radius: 15;" text="Edit status" textFill="WHITE">
          <font>
             <Font size="21.0" />
          </font>

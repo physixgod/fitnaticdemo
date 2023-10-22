@@ -33,6 +33,8 @@ public class MenuCompetitionController implements Initializable {
     private Button ans;
     @FXML
     private Button managesports;
+    @FXML
+    private Button competitions;
 
     /**
      * Initializes the controller class.
@@ -103,6 +105,21 @@ public class MenuCompetitionController implements Initializable {
 
     }
         
+    }
+
+    @FXML
+    private void enterCompetitons(ActionEvent event) {
+                                            try {
+ 
+        Parent page =FXMLLoader.load(getClass().getResource("form.fxml"));
+        Scene scene=new Scene(page);
+        Stage appStage =(Stage) ((Node)event.getSource()).getScene().getWindow();
+        appStage.setScene(scene);
+        appStage.show();
+    } catch (IOException e) {
+        e.printStackTrace();
+
+    }
     }
     
 }
