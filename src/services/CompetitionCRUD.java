@@ -80,6 +80,7 @@ public class CompetitionCRUD {
             c.setStatus(rs.getString("status"));
             c.setPrizes(rs.getString("prize"));
             c.setSportType(rs.getString("sportType"));
+            c.setDescription(rs.getString("description"));
             myList.add(c);
             
         }

@@ -13,6 +13,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import services.CompetitionCRUD;
 import entities.Competition;
+import static gui.PDFGenerator.printCompetitionToPDF;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -68,6 +69,8 @@ public class DisplayCompetitonController implements Initializable {
     private Button editBtn;
     @FXML
     private Button returnBtn;
+    @FXML
+    private Button export;
 
 
     @Override
@@ -210,4 +213,12 @@ private void back(ActionEvent event) {
 
     }
 }
+
+    @FXML
+    private void exportTOPDF(ActionEvent event) {
+        Competition selectedCompetition = tv.getSelectionModel().getSelectedItem();
+        System.out.println(selectedCompetition.getName());
+        System.out.println(selectedCompetition.getLocation());
+        printCompetitionToPDF(selectedCompetition, "C:\\Users\\toufa\\OneDrive\\Bureau\\Competitions",selectedCompetition.getName());
+    }
 }

@@ -37,7 +37,6 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="send" layoutX="1070.0" layoutY="44.0" mnemonicParsing="false" onAction="#envoyer" text="Button" />
                </children>
                <cursor>
                   <Cursor fx:constant="DEFAULT" />

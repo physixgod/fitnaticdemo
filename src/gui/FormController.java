@@ -202,32 +202,23 @@ public class FormController implements Initializable {
 
     @FXML
     private void participate1(ActionEvent event) {
-        TextInputDialog emailDialog = new TextInputDialog();
-        emailDialog.setTitle("Participate in "+Competition1.getText());
-        emailDialog.setHeaderText("Enter Your Email");
-        emailDialog.setContentText("Email:");
-        
+       TextInputDialog emailDialog = new TextInputDialog();
+    emailDialog.setTitle("Participate in " + Competition1.getText());
+    emailDialog.setHeaderText("Enter Your Email");
+    emailDialog.setContentText("Email:");
 
-        // Show the email dialog and capture the email input
-        emailDialog.showAndWait().ifPresent(email -> {
-            String e = "jenhanimostfa1@gmail.com";
-            // Send an email to the entered email address
-            boolean emailSent = sendConfirmationEmail(email);
+    // Show the email dialog and capture the email input
+    emailDialog.showAndWait().ifPresent(email -> {
+        // Send an email to the entered email address
+        sendConfirmationEmail(email);
 
-            // Display a confirmation message
-            Alert alert = new Alert(AlertType.INFORMATION);
-            alert.setTitle("Participation Confirmation");
-
-            if (emailSent) {
-                alert.setHeaderText("Thank you for participating!");
-                alert.setContentText("An email has been sent to " + email);
-            } else {
-                alert.setHeaderText("Email sending failed");
-                alert.setContentText("Please try again later.");
-            }
-
-            alert.showAndWait();
-        });
+        // Display a confirmation message
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle("Participation Confirmation");
+        alert.setHeaderText("Thank you for participating!");
+        alert.setContentText("An email has been sent to " + email);
+        alert.showAndWait();
+    });
     }
 
     @FXML
@@ -247,40 +238,45 @@ public class FormController implements Initializable {
     @FXML
     private void participate2(ActionEvent event) {
     }
-    private boolean sendConfirmationEmail(String toEmail) {
-        Properties properties = new Properties();
-        properties.put("mail.smtp.auth", "true");
-        properties.put("mail.smtp.starttls.enable", "true");
-        properties.put("mail.smtp.host", "smtp.gmail.com");
-        properties.put("mail.smtp.port", "587");
+    public static void sendConfirmationEmail(String toEmail) {
+        // Email configuration
+        String host = "sandbox.smtp.mailtrap.io";
+        String username = "633b3199b9af8f";
+        String password = "2b8236475e4b84";
+        String fromEmail = "admin@fitnatic.com";
 
-        Session session = Session.getInstance(properties, new Authenticator() {
-            @Override
+        Properties props = new Properties();
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.starttls.enable", "true");
+        props.put("mail.smtp.host", host);
+        props.put("mail.smtp.port", "2525"); // Mailtrap SMTP port
+
+        Session session = Session.getInstance(props, new Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication(YOUR_EMAIL, YOUR_PASSWORD);
+                return new PasswordAuthentication(username, password);
             }
         });
 
         try {
+            // Create a message
             Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress(YOUR_EMAIL));
+            message.setFrom(new InternetAddress(fromEmail));
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toEmail));
-            message.setSubject("Participation Confirmation");
-            message.setText("Thank you for participating!");
+            message.setSubject("Confirmation of Participation");
+            message.setText("Dear participant,\n\nThank you for joining our competition! Your participation is greatly appreciated, and we look forward to your active involvement. If you have any questions or need assistance, please don't hesitate to contact us.\n\nBest regards,\nThe Competition Team");
 
+            // Send the message
             Transport.send(message);
-            return true; // Email sent successfully
+
+            System.out.println("Email sent successfully to: " + toEmail);
         } catch (MessagingException e) {
             e.printStackTrace();
-            return false; // Email sending failed
         }
     }
 
     @FXML
     private void envoyer(ActionEvent event) {
-        if(sendConfirmationEmail("jenhanimostfa1@gmail.com")){
-            System.out.println("YESSSSSSSSSSSSSSSSSSS");
-        }
+        sendConfirmationEmail("jenhanimostfa1@gmail.com");
     }
     
 }
