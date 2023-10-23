@@ -14,10 +14,10 @@ public class AddCompetition extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("addCompetition.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("menuCompetition.fxml"));
             Parent root = loader.load();
             Scene scene = new Scene(root, 1280, 720);
-            AddCompetitionController firstController = loader.getController();
+           
             primaryStage.setTitle("FitNatic");
             primaryStage.setScene(scene);
             primaryStage.show();

@@ -119,18 +119,12 @@ private void removeCompetition(ActionEvent event) throws SQLException {
         String query = "DELETE FROM Competition WHERE name = ?";
         if (result.isPresent() && result.get() == ButtonType.OK) {
         try (Connection connection = MyConnection.getInstance().getCnx();
-             PreparedStatement ps = connection.prepareStatement(query)) {
-
-           
+            PreparedStatement ps = connection.prepareStatement(query)) {
            ps.setString(1, selectedCompetition.getName());
-            
             int rowsAffected = ps.executeUpdate();
-
-            if (rowsAffected > 0) {
-                
+            if (rowsAffected > 0) {        
                 tv.getItems().remove(selectedCompetition);
             } else {
-   
                 displayError("Failed to delete the competition.");
             }
         } catch (SQLException ex) {

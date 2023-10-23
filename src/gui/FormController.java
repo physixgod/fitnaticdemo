@@ -5,6 +5,7 @@
  */
 package gui;
 
+import services.inscriptionCRUD;
 import entities.Competition;
 import java.io.IOException;
 import java.net.URL;
@@ -104,8 +105,6 @@ public class FormController implements Initializable {
     List<Competition> lastTwoOpenCompetitions = new ArrayList<>();
     private static final String YOUR_EMAIL = "fitnatic3@gmail.com"; 
     private static final String YOUR_PASSWORD = "23045265danke";
-    @FXML
-    private Button send;
 
 
 
@@ -202,17 +201,16 @@ public class FormController implements Initializable {
 
     @FXML
     private void participate1(ActionEvent event) {
-       TextInputDialog emailDialog = new TextInputDialog();
+    TextInputDialog emailDialog = new TextInputDialog();
     emailDialog.setTitle("Participate in " + Competition1.getText());
     emailDialog.setHeaderText("Enter Your Email");
     emailDialog.setContentText("Email:");
 
-    // Show the email dialog and capture the email input
     emailDialog.showAndWait().ifPresent(email -> {
-        // Send an email to the entered email address
+        
         sendConfirmationEmail(email);
-
-        // Display a confirmation message
+        inscriptionCRUD ins = new inscriptionCRUD();
+        ins.insertInscription(email,Competition2.getText());
         Alert alert = new Alert(AlertType.INFORMATION);
         alert.setTitle("Participation Confirmation");
         alert.setHeaderText("Thank you for participating!");
@@ -237,9 +235,25 @@ public class FormController implements Initializable {
 
     @FXML
     private void participate2(ActionEvent event) {
+        TextInputDialog emailDialog = new TextInputDialog();
+    emailDialog.setTitle("Participate in " + Competition2.getText());
+    emailDialog.setHeaderText("Enter Your Email");
+    emailDialog.setContentText("Email:");
+
+    emailDialog.showAndWait().ifPresent(email -> {
+        
+        sendConfirmationEmail(email);
+        inscriptionCRUD ins = new inscriptionCRUD();
+        ins.insertInscription(email,Competition2.getText());
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle("Participation Confirmation");
+        alert.setHeaderText("Thank you for participating!");
+        alert.setContentText("An email has been sent to " + email);
+        alert.showAndWait();
+    });
     }
     public static void sendConfirmationEmail(String toEmail) {
-        // Email configuration
+      
         String host = "sandbox.smtp.mailtrap.io";
         String username = "633b3199b9af8f";
         String password = "2b8236475e4b84";
@@ -249,7 +263,7 @@ public class FormController implements Initializable {
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
         props.put("mail.smtp.host", host);
-        props.put("mail.smtp.port", "2525"); // Mailtrap SMTP port
+        props.put("mail.smtp.port", "2525"); 
 
         Session session = Session.getInstance(props, new Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
@@ -258,14 +272,14 @@ public class FormController implements Initializable {
         });
 
         try {
-            // Create a message
+     
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(fromEmail));
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toEmail));
             message.setSubject("Confirmation of Participation");
             message.setText("Dear participant,\n\nThank you for joining our competition! Your participation is greatly appreciated, and we look forward to your active involvement. If you have any questions or need assistance, please don't hesitate to contact us.\n\nBest regards,\nThe Competition Team");
 
-            // Send the message
+          
             Transport.send(message);
 
             System.out.println("Email sent successfully to: " + toEmail);
@@ -274,9 +288,6 @@ public class FormController implements Initializable {
         }
     }
 
-    @FXML
-    private void envoyer(ActionEvent event) {
-        sendConfirmationEmail("jenhanimostfa1@gmail.com");
-    }
+
     
 }
