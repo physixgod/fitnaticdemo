@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="gui.FormController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.FormController">
     <stylesheets>
         <URL value="@form.css" />
     </stylesheets>
@@ -20,9 +20,9 @@
             <URL value="@forum.css" />
          </stylesheets>
          <children>
-            <AnchorPane fx:id="backBtn" layoutX="-14.0" layoutY="-10.0" prefHeight="135.0" prefWidth="1295.0" style="-fx-background-color: #999999;">
+            <AnchorPane fx:id="backBtn" layoutX="-14.0" layoutY="-10.0" prefHeight="135.0" prefWidth="1295.0" style="-fx-background-color: #256790;">
                <children>
-                  <Label layoutX="460.0" layoutY="35.0" prefHeight="48.0" prefWidth="437.0" text="Open Competitions" textFill="#4b5961" wrapText="true">
+                  <Label layoutX="460.0" layoutY="35.0" prefHeight="48.0" prefWidth="437.0" text="Open Competitions" textFill="WHITE" wrapText="true">
                      <font>
                         <Font name="Times New Roman Bold" size="42.0" />
                      </font>

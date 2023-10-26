@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.CalendarController">
+    <stylesheets>
+        <URL value="@calendar.css" />
+    </stylesheets>
+   <children>
+      <BorderPane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0">
+         <top>
+            <AnchorPane fx:id="backBtn" prefHeight="118.0" prefWidth="1291.0" style="-fx-background-color: #256790;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="437.0" layoutY="35.0" prefHeight="48.0" prefWidth="437.0" text="Calendrier" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font name="Times New Roman Bold" size="42.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="33.0" fitWidth="45.0" layoutX="90.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/back.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="returnBtn" layoutX="88.0" layoutY="48.0" mnemonicParsing="false" onAction="#back" prefHeight="31.0" prefWidth="38.0" style="-fx-background-color: transparent;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </AnchorPane>
+         </top>
+         <center>
+            <AnchorPane fx:id="prizeTxt" prefHeight="602.0" prefWidth="961.0" style="-fx-background-color: #FFFFFF;" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="243.0" fitWidth="259.0" layoutX="896.0" layoutY="32.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../image/Calendar.png" />
+                     </image>
+                  </ImageView>
+                  <TableView fx:id="Calendrier" layoutX="25.0" layoutY="353.0" prefHeight="127.0" prefWidth="831.0">
+                    <columns>
+                      <TableColumn fx:id="Lundi" prefWidth="112.0" text="Lundi" />
+                      <TableColumn fx:id="Mardi" prefWidth="114.0" text="Mardi" />
+                        <TableColumn fx:id="Mercredi" prefWidth="132.0" text="Mercredi" />
+                        <TableColumn fx:id="Jeudi" prefWidth="129.0" text="Jeudi" />
+                        <TableColumn fx:id="Vendredi" prefWidth="166.0" text="Vendredi" />
+                        <TableColumn fx:id="Samedi" prefWidth="176.0" text="Samedi" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="804.0" prefWidth="1112.0" style="-fx-background-color: #d7e5f4;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Diet2Controller">
+   <children>
+      <Pane fx:id="regime" layoutX="17.0" layoutY="418.0" prefHeight="345.0" prefWidth="456.0" style="-fx-background-color: #d7e5f4;">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" text="Suivez-vous l’un de ces régimes ?" textFill="#070707">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+            <Pane layoutX="-3.0" layoutY="66.0" prefHeight="89.0" prefWidth="424.0">
+               <children>
+                  <RadioButton fx:id="radiolactose" layoutX="44.0" layoutY="35.0" mnemonicParsing="false" text="je suis intolérant au lactose">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </RadioButton>
+                  <ImageView fitHeight="60.0" fitWidth="88.0" layoutX="340.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Capture_d_écran_2023-10-21_172331-removebg-preview%20(1).png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="26.0" layoutY="147.0" prefHeight="77.0" prefWidth="416.0">
+               <children>
+                  <RadioButton fx:id="radiogluten" layoutX="14.0" layoutY="23.0" mnemonicParsing="false" text="je ne mange pas de gluten">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </RadioButton>
+                  <ImageView fitHeight="77.0" fitWidth="72.0" layoutX="307.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Capture_d_écran_2023-10-21_172437-removebg-preview.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="34.0" layoutY="224.0" prefHeight="60.0" prefWidth="379.0">
+               <children>
+                  <RadioButton fx:id="radioVegetrian" layoutX="7.0" layoutY="15.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="229.0" text="je suis végétarien">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </RadioButton>
+                  <ImageView fitHeight="60.0" fitWidth="63.0" layoutX="302.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Capture_d_écran_2023-10-21_172739-removebg-preview.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane fx:id="activite" layoutX="509.0" layoutY="91.0" prefHeight="327.0" prefWidth="560.0">
+         <children>
+            <Label layoutX="3.0" layoutY="44.0" text="Votre Niveau d'Activité">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="radioeger" layoutX="14.0" layoutY="109.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="252.0" text="Légèrement actif">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="radiermoder" layoutX="14.0" layoutY="157.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="229.0" text="Modérément actif">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="radrotractif" layoutX="13.0" layoutY="208.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="214.0" text="Très actif">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="radioextremen" layoutX="13.0" layoutY="267.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="246.0" text="Extrêmement actif">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </RadioButton>
+            <ImageView fitHeight="243.0" fitWidth="237.0" layoutX="297.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/3803118-removebg-preview.png" />
+               </image>
+            </ImageView>
+            <Line endX="970.0" endY="1.0" layoutX="-410.0" layoutY="326.0" startX="-90.5" />
+         </children>
+      </Pane>
+      <Button fx:id="btnCaloriques" layoutX="269.0" layoutY="717.0" mnemonicParsing="false" onAction="#CalculerBesoinCalorique" prefHeight="57.0" prefWidth="447.0" style="-fx-background-color: #256790;" text="Calculer Votre besoin Caloriques" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Button>
+      <Pane fx:id="stress" layoutX="515.0" layoutY="425.0" prefHeight="281.0" prefWidth="549.0">
+         <children>
+            <Label layoutX="3.0" layoutY="7.0" prefHeight="36.0" prefWidth="328.0" text=" Votrre niveau du stress ">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="radiofaible" layoutX="20.0" layoutY="92.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="141.0" text="Faible">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="radiomodere" layoutX="16.0" layoutY="166.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="148.0" text="Modéré">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="radioeleve" layoutX="20.0" layoutY="236.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="160.0" text="Elevé">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </RadioButton>
+            <ImageView fitHeight="256.0" fitWidth="362.0" layoutX="190.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images//_fpdl.in__compteur-vitesse-pointage-credit-fond-blanc-personnes-dans-style-plat_123447-4006_normal-removebg-preview.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Line endX="-100.0" endY="717.0" layoutX="593.0" layoutY="-20.0" startX="-100.0" startY="107.49998474121094" />
+      <Label layoutX="37.0" layoutY="132.0" text="Choisissez votre objectif" textFill="#030303">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="radioGain" layoutX="37.0" layoutY="213.0" mnemonicParsing="false" text="Tonifier les muscles">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </RadioButton>
+      <ImageView fitHeight="89.0" fitWidth="107.0" layoutX="369.0" layoutY="184.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Capture_d_écran_2023-10-21_163654-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <RadioButton fx:id="radioPerte" layoutX="45.0" layoutY="341.0" mnemonicParsing="false" text="Perte de poids">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </RadioButton>
+      <ImageView fitHeight="89.0" fitWidth="95.0" layoutX="366.0" layoutY="313.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images//hnghghng-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="255.0" layoutY="21.0" text="Calculateur de Besoins Caloriques" textFill="#345a8a">
+         <font>
+            <Font name="System Bold" size="33.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnretour" layoutX="17.0" layoutY="30.0" mnemonicParsing="false" onAction="#retourcalorique" text="retour" />
+   </children>
+</AnchorPane>

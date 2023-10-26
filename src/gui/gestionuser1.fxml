@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="804.0" prefWidth="1112.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Gestionuser1Controller">
+    <children>
+        <TableView fx:id="tableView" layoutX="85.0" layoutY="151.0" prefHeight="424.0" prefWidth="971.0" style="-fx-background-color: #4799c9;">
+            <columns>
+                <TableColumn fx:id="lundiColumn" prefWidth="128.0" text="Lundi">
+                    <cellValueFactory><PropertyValueFactory property="lundi" /></cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="mardiColumn" prefWidth="176.0" text="Mardi">
+                    <cellValueFactory><PropertyValueFactory property="mardi" /></cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="mercrediColumn" prefWidth="183.0" text="Mercredi">
+                    <cellValueFactory><PropertyValueFactory property="mercredi" /></cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="jeudiColumn" prefWidth="155.0" text="Jeudi">
+                    <cellValueFactory><PropertyValueFactory property="jeudi" /></cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="vendrediColumn" prefWidth="180.0" text="Vendredi">
+                    <cellValueFactory><PropertyValueFactory property="vendredi" /></cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="samediColumn" prefWidth="148.0" text="Samedi">
+                    <cellValueFactory><PropertyValueFactory property="samedi" /></cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+        <TextField fx:id="tabletext" layoutX="89.0" layoutY="606.0" prefWidth="500.0" style="-fx-background-color: white;" />
+        <Button fx:id="ajoutbtn" layoutX="765.0" layoutY="600.0" onAction="#handleAdd" prefHeight="43.0" prefWidth="127.0" style="-fx-background-color: #256790;" text="Ajouter" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font></Button>
+        <Button fx:id="suppbtn" layoutX="444.0" layoutY="653.0" prefHeight="43.0" prefWidth="127.0" style="-fx-background-color: white;" text="Supprimer" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font></Button>
+        <Button fx:id="modifbtn" layoutX="276.0" layoutY="653.0" onAction="#handleModify" prefHeight="43.0" prefWidth="127.0" style="-fx-background-color: white;" text="Modifier" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font></Button>
+        <Text layoutX="100.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Que voulez vous faire cette semaine:">
+         <font>
+            <Font size="24.0" />
+         </font></Text>
+      <Button fx:id="btnSend" layoutX="609.0" layoutY="600.0" mnemonicParsing="false" onMouseClicked="#senDV" prefHeight="43.0" prefWidth="127.0" style="-fx-background-color: #256790;" text="envoyer" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font></Button>
+      <ImageView fx:id="refbtn" fitHeight="43.0" fitWidth="45.0" layoutX="1011.0" layoutY="90.0" onMouseClicked="#refresh">
+         <image>
+            <Image url="@../image/refresh.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Button fx:id="menu" layoutX="985.0" layoutY="29.0" mnemonicParsing="false" onAction="#tomenu" prefHeight="43.0" prefWidth="98.0" style="-fx-background-color: #4799c9;" text="To Menu" />
+    </children>
+</AnchorPane>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="804.0" prefWidth="1112.0" style="-fx-background-color: #d7e5f4;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.gui.ModifieractController">
+   <children>
+      <Label layoutX="128.0" layoutY="188.0" prefHeight="21.0" prefWidth="73.0" text="Nom">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font></Label>
+      <Label layoutX="81.0" layoutY="265.0" prefHeight="36.0" prefWidth="130.0" text="DateDebut">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font></Label>
+      <Label layoutX="109.0" layoutY="350.0" prefHeight="36.0" prefWidth="140.0" text="DateFin">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font></Label>
+      <Label layoutX="128.0" layoutY="418.0" prefHeight="21.0" prefWidth="73.0" text="Duree">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font></Label>
+      <Label layoutX="132.0" layoutY="499.0" prefHeight="36.0" prefWidth="94.0" text="Type">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font></Label>
+      <Label layoutX="117.0" layoutY="586.0" prefHeight="36.0" prefWidth="94.0" text="Notes">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font></Label>
+      <TextField fx:id="modnom" layoutX="282.0" layoutY="188.0" prefHeight="36.0" prefWidth="178.0" />
+      <DatePicker fx:id="moddatedebut" layoutX="282.0" layoutY="265.0" prefHeight="36.0" prefWidth="178.0" />
+      <DatePicker fx:id="moddatefin" layoutX="282.0" layoutY="350.0" prefHeight="36.0" prefWidth="178.0" />
+      <ComboBox fx:id="modtype" layoutX="274.0" layoutY="499.0" prefHeight="36.0" prefWidth="178.0" />
+      <TextField fx:id="modnotes" layoutX="282.0" layoutY="589.0" prefHeight="36.0" prefWidth="178.0" />
+      <TextField fx:id="modduree" layoutX="274.0" layoutY="418.0" prefHeight="36.0" prefWidth="178.0" />
+      <Button fx:id="modconfirm" layoutX="298.0" layoutY="701.0" mnemonicParsing="false" onAction="#confirmermodification" prefHeight="54.0" prefWidth="130.0" style="-fx-background-color: #256790;" text="Confirmer" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font></Button>
+      <Button fx:id="backtotable" layoutX="109.0" layoutY="701.0" mnemonicParsing="false" onAction="#backtotableview" prefHeight="54.0" prefWidth="130.0" style="-fx-background-color: #256790;" text="Back" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font></Button>
+      <Label layoutX="377.0" layoutY="35.0" text="Modifier Activité" textFill="#345a8a">
+         <font>
+            <Font name="System Bold" size="45.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="597.0" fitWidth="655.0" layoutX="513.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../image/_fpdl.in__equipement-sport-pour-yoga-fitness-isole-fond-blanc-trace-detourage_105428-4237_normal-removebg-preview%20(1).png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

@@ -49,9 +49,9 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="backBtn" layoutY="1.0" prefHeight="127.0" prefWidth="1290.0" style="-fx-background-color: #999999;">
+      <AnchorPane fx:id="backBtn" layoutY="1.0" prefHeight="127.0" prefWidth="1290.0" style="-fx-background-color: #256790;">
          <children>
-            <Label layoutX="460.0" layoutY="35.0" prefHeight="48.0" prefWidth="437.0" text="New Sport Type" textFill="#4b5961" wrapText="true">
+            <Label layoutX="460.0" layoutY="35.0" prefHeight="48.0" prefWidth="437.0" text="New Sport Type" textFill="WHITE" wrapText="true">
                <font>
                   <Font name="Times New Roman Bold" size="42.0" />
                </font>

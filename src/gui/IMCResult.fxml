@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="843.0" prefWidth="1021.0" style="-fx-background-color: #d7e5f4;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.IMCResultController">
+    <children>
+      <Label layoutX="303.0" layoutY="27.0" prefHeight="78.0" prefWidth="494.0" text="Resultat de L'IMC" textFill="#345a8a">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="55.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="491.0" fitWidth="452.0" layoutX="737.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images//femme-heureuse-ecailles-pomme-verte-removebg-preview.png" />
+         </image></ImageView>
+      <Button fx:id="btnrtr" layoutX="21.0" layoutY="16.0" mnemonicParsing="false" onAction="#retour" prefHeight="11.0" prefWidth="71.0" style="-fx-background-color: #345a8a#345a8a;" text="retour" />
+      <Pane layoutX="14.0" layoutY="77.0" prefHeight="419.0" prefWidth="706.0">
+         <children>
+      
+              <Label layoutX="85.0" layoutY="83.0" text="IMC:" textFill="#345a8a">
+               <font>
+                  <Font name="System Bold" size="28.0" />
+               </font>
+            </Label>
+              <Label fx:id="txtimc" layoutX="252.0" layoutY="86.0" prefHeight="35.0" prefWidth="79.0" style="-fx-background-color: #6d96c2;" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font></Label>
+      
+              <Label layoutX="28.0" layoutY="156.0" text="Catégorie IMC:" textFill="#345a8a">
+               <font>
+                  <Font name="System Bold" size="28.0" />
+               </font>
+            </Label>
+              <Label fx:id="txtimc1" layoutX="252.0" layoutY="159.0" prefHeight="35.0" prefWidth="143.0" style="-fx-background-color: #6d96c2;" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font></Label>
+            <Label layoutX="36.0" layoutY="252.0" text="Poids Actuel :" textFill="#345a8a">
+               <font>
+                  <Font name="System Bold" size="28.0" />
+               </font>
+            </Label>
+              <Label fx:id="labelimc" layoutX="252.0" layoutY="255.0" prefHeight="35.0" prefWidth="86.0" style="-fx-background-color: #6d96c2;" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font></Label>
+            <Label layoutX="35.0" layoutY="340.0" prefHeight="39.0" prefWidth="161.0" text="Poids Ideal :" textFill="#345a8a">
+               <font>
+                  <Font name="System Bold" size="28.0" />
+               </font>
+            </Label>
+              <Label fx:id="txtimc14" layoutX="252.0" layoutY="343.0" prefHeight="35.0" prefWidth="86.0" style="-fx-background-color: #6d96c2;" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font></Label>
+            <Line endX="375.0" layoutX="134.0" layoutY="132.0" startX="-100.0" />
+            <Line endX="386.0" endY="18.0" layoutX="123.0" layoutY="204.0" startX="-93.0" startY="18.0" />
+            <Line endX="384.0" endY="40.0" layoutX="134.0" layoutY="280.0" startX="-96.0" startY="40.0" />
+            <Line endX="402.0" endY="60.0" layoutX="122.0" layoutY="356.0" startX="-91.0" startY="60.0" />
+            <ImageView fitHeight="78.0" fitWidth="161.0" layoutX="414.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images//_fpdl.in__femme-plate-poids-normal-controle-regime-echelle-imc_88138-933_normal-removebg-preview.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="68.0" fitWidth="137.0" layoutX="397.0" layoutY="327.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/_fpdl.in__pese-personne-paire-halteres-fond-couleur-rose-vue-dessus-illustration-3d_771335-3776_normal-removebg-preview.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="99.0" fitWidth="117.0" layoutX="415.0" layoutY="223.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/_fpdl.in__conception-echelle-emballage_1166-4_normal-removebg-preview.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane fx:id="txtrisque" layoutX="430.0" layoutY="529.0" prefHeight="210.0" prefWidth="367.0">
+         <children>
+            <DialogPane contentText="Hypertension artérielle, maladies cardiaques, accident vasculaire cérébral, diabète de type 2, certains types de cancer, arthrose, maux de dos, mortalité dans tous les cas" headerText="☝Risques pour un IMC malsain" layoutX="124.0" layoutY="24.0" prefHeight="161.0" prefWidth="370.0" style="-fx-background-color: #d7e5f4;" />
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="471.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Capture_d_écran_2023-10-22_130006-removebg-preview.png" />
+               </image>
+            </ImageView>
+            <Line endX="463.7928466796875" endY="-13.20709228515625" layoutX="131.0" layoutY="25.0" startX="-38.5" startY="-11.5" />
+            <Line endX="94.5" endY="-0.5" layoutX="502.0" layoutY="13.0" startX="93.5" startY="172.5" />
+            <Line endX="119.0" endY="-0.79290771484375" layoutX="477.0" layoutY="187.0" startX="-385.0" />
+            <Line endX="-100.0" endY="173.5" layoutX="193.0" layoutY="14.0" startX="-100.0" />
+         </children>
+      </Pane>
+      <Pane fx:id="txtbonne" layoutX="416.0" layoutY="490.0" prefHeight="218.0" prefWidth="713.0">
+         <children>
+            <ImageView fitHeight="174.0" fitWidth="102.0" layoutX="533.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Capture_d_écran_2023-10-22_124135-removebg-preview.png" />
+               </image>
+            </ImageView>
+            <Line endX="396.5" endY="0.5" layoutX="237.0" layoutY="51.0" startX="-110.0" />
+            <Line endX="11.5" endY="124.0" layoutX="115.0" layoutY="105.0" startX="11.5" startY="-53.5" />
+            <Line endX="-84.5" endY="177.5" layoutX="718.0" layoutY="52.0" startX="-85.0" />
+            <DialogPane contentText="D'après les recherches, 18 à 24 % est un pourcentage de graisse corporelle idéal pour commencer à gagner du muscle et à construire un corps en forme plus rapidement." headerText="👌Un bon IMC de départ pour avoir un corps en forme" layoutX="180.0" layoutY="65.0" prefHeight="174.0" prefWidth="353.0" style="-fx-background-color: #d7e5f4;" />
+            <Line endX="100.0" layoutX="533.0" layoutY="230.0" startX="-405.0" />
+         </children>
+      </Pane>
+      <Button fx:id="IMC" layoutX="645.0" layoutY="739.0" mnemonicParsing="false" onAction="#IMCbtn" prefHeight="68.0" prefWidth="353.0" style="-fx-background-color: #256790;" text="IMC PDF" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Button>
+      <Pane fx:id="txtsous" layoutX="29.0" layoutY="496.0" prefHeight="254.0" prefWidth="506.0">
+         <children>
+            <DialogPane contentText="Il est essentiel de noter que les risques liés au sous-poids ne se limitent pas aux conséquences physiques, mais peuvent également affecter la santé mentale, en contribuant à des problèmes tels que l'anxiété et la dépression." headerText="☝ Risques pour un IMC malsain" layoutX="14.0" layoutY="36.0" prefHeight="99.0" prefWidth="415.0" style="-fx-background-color: ima;" />
+            <Line endX="445.0" layoutX="115.0" layoutY="23.0" startX="-100.0" />
+            <Line endX="232.0" endY="-1.5" layoutX="325.0" layoutY="210.0" startX="-313.5" />
+            <Line endX="-100.0" endY="189.0" layoutX="115.0" layoutY="23.0" startX="-100.0" />
+            <Line endX="135.5" endY="4.5" layoutX="425.0" layoutY="19.0" startX="135.5" startY="190.0" />
+            <ImageView fitHeight="114.0" fitWidth="136.0" layoutX="420.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Capture_d_écran_2023-10-22_150423-removebg-preview.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+
+                                                                                                        <Button fx:id="btnPlan" layoutX="77.0" layoutY="739.0" mnemonicParsing="false" onAction="#Plan" prefHeight="68.0" prefWidth="353.0" style="-fx-background-color: #256790;" text="Calculer Votre besoin Caloriques" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Button>
+
+      
+    </children>
+</AnchorPane>

@@ -1,0 +1,5 @@
+/* Define custom CSS style for the bars */
+.chart-bar.series0.bar { -fx-bar-fill: #FF5733; } /* Red */
+.chart-bar.series1.bar { -fx-bar-fill: #33FF57; } /* Green */
+.chart-bar.series2.bar { -fx-bar-fill: #5733FF; } /* Blue */
+/* Add more colors as needed */

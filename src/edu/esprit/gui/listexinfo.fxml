@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="804.0" prefWidth="1112.0" style="-fx-background-color: #d7e5f4;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.gui.ListexinfoController">
+   <children>
+      <ListView fx:id="exerciseListViewex" layoutX="87.0" layoutY="80.0" prefHeight="533.0" prefWidth="905.0" />
+      <Button fx:id="bac" layoutX="62.0" layoutY="637.0" mnemonicParsing="false" onAction="#backtoexercicetable" prefHeight="63.0" prefWidth="145.0" style="-fx-background-color: #256790;" text="Back" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font></Button>
+      <Button fx:id="add" layoutX="265.0" layoutY="637.0" mnemonicParsing="false" onAction="#selectExercise" prefHeight="63.0" prefWidth="145.0" style="-fx-background-color: #256790;" text="Add" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font></Button>
+      <TextField fx:id="nomex" layoutX="665.0" layoutY="712.0" prefHeight="50.0" prefWidth="342.0" />
+   </children>
+</AnchorPane>

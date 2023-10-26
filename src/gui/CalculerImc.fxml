@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="804.0" prefWidth="1102.0" style="-fx-background-color: #d7e5f4;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.CalculerImcController">
+    <children>
+        <Label layoutX="335.0" prefHeight="126.0" prefWidth="501.0" text="Calculateur d'IMC" textFill="#345a8a">
+            <font>
+                <Font name="Arial Rounded MT Bold" size="55.0" />
+            </font>
+        </Label>
+      <Label layoutX="18.0" layoutY="116.0" prefHeight="31.0" prefWidth="1034.0" text="Pour obtenir votre IMC, entrez votre Donnees personnelles dans les cases ci-dessous puis cliquez sur Calculer.">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Pane layoutX="14.0" layoutY="159.0" prefHeight="531.0" prefWidth="687.0" style="-fx-background-color: #d7e5f4;">
+         <children>
+              <Label layoutX="68.0" layoutY="101.0" prefHeight="40.0" prefWidth="109.0" text="Sexe:" textFill="#345a8a">
+                  <font>
+                      <Font name="System Bold" size="28.0" />
+                  </font>
+              </Label>
+              <ComboBox fx:id="combo_sexe" layoutX="197.0" layoutY="101.0" prefHeight="40.0" prefWidth="198.0" promptText="Choisissez le sexe" style="-fx-background-color: white;" />
+              <Label layoutX="32.0" layoutY="207.0" prefHeight="40.0" prefWidth="255.0" text="Date de naissance :" textFill="#345a8a">
+                  <font>
+                      <Font name="System Bold" size="28.0" />
+                  </font>
+              </Label>
+      
+              <Label layoutX="32.0" layoutY="329.0" text="Taille (cm):" textFill="#345a8a">
+                  <font>
+                      <Font name="System Bold" size="28.0" />
+                  </font>
+              </Label>
+        <Spinner fx:id="txtnom1" editable="true" layoutX="204.0" layoutY="330.0" prefHeight="39.0" prefWidth="198.0" />
+      
+              <Label layoutX="32.0" layoutY="442.0" text="Poids (kg):" textFill="#345a8a">
+                  <font>
+                      <Font name="System Bold" size="28.0" />
+                  </font>
+              </Label>
+      <Spinner fx:id="txtnom11" editable="true" layoutX="206.0" layoutY="443.0" prefHeight="39.0" prefWidth="198.0" />
+            <Line endX="555.0" layoutX="115.0" layoutY="62.0" startX="-100.0" />
+            <Label layoutX="32.0" layoutY="28.0" text="ENTREZ VOTRE DONNES PERSONNELLES">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+            </Label>
+            <Line endX="538.0" layoutX="131.0" layoutY="174.0" startX="-115.0" />
+            <Line endX="535.0" layoutX="131.0" layoutY="285.0" startX="-111.0" />
+            <Line endX="542.0" layoutX="129.0" layoutY="402.0" startX="-103.0" />
+            <ImageView fitHeight="68.0" fitWidth="146.0" layoutX="402.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images//Capture_d_écran_2023-10-21_230827-removebg-preview.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="68.0" fitWidth="120.0" layoutX="495.0" layoutY="193.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images//m003t0639_b_calendar_12oct_22-removebg-preview.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="82.0" fitWidth="161.0" layoutX="427.0" layoutY="308.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/_fpdl.in__icone-symbole-mesure-hauteurmodele-conception-illustration-vectorielle_757387-2647_normal-removebg-preview.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="68.0" fitWidth="82.0" layoutX="440.0" layoutY="428.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/_fpdl.in__echelles-poids-contour-icone-illustration-vectorielle_678192-1832_normal-removebg-preview.png" />
+               </image>
+            </ImageView>
+            <Line endX="546.0" layoutX="127.0" layoutY="512.0" startX="-100.0" />
+            <DatePicker fx:id="txtage" layoutX="305.0" layoutY="208.0" prefHeight="39.0" prefWidth="198.0" />
+
+         </children>
+      </Pane>
+
+                          <Button layoutX="365.0" layoutY="704.0" onAction="#Calculer1" prefHeight="68.0" prefWidth="442.0" style="-fx-background-color: #256790;" text="Calculer votre IMC" textAlignment="CENTER" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="29.0" />
+            </font>
+        </Button>
+      <ImageView fitHeight="279.0" fitWidth="419.0" layoutX="684.0" layoutY="263.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/_fpdl.in__maquette-presse-papiers-assortiment-kits-gym_23-2149657200_large-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="82.0" fitWidth="56.0" layoutX="746.0" layoutY="714.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/Capture_d_écran_2023-10-22_000644-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnavimc" layoutX="104.0" layoutY="32.0" mnemonicParsing="false" onAction="#avantimc" text="avant" />
+      <Button fx:id="btncretour" layoutX="18.0" layoutY="32.0" mnemonicParsing="false" onAction="#imcretour" text="retour" />
+      <Button fx:id="btnhome" layoutX="1004.0" layoutY="32.0" mnemonicParsing="false" onAction="#Home" text="Home" />
+
+
+
+
+    </children>
+</AnchorPane>

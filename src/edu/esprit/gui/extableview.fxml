@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="804.0" prefWidth="1112.0" style="-fx-background-color: #d7e5f4;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.esprit.gui.ExtableviewController">
+   <children>
+      <TableView fx:id="extable" layoutX="29.0" layoutY="168.0" prefHeight="410.0" prefWidth="773.0">
+        <columns>
+          <TableColumn fx:id="exnom" prefWidth="91.0" text="Nom" />
+          <TableColumn fx:id="excategorie" prefWidth="146.0" text="Categorie" />
+            <TableColumn fx:id="exduree" prefWidth="51.0" text="Duree" />
+            <TableColumn fx:id="exrepetitions" prefWidth="61.0" text="Reps" />
+            <TableColumn fx:id="exseries" prefWidth="84.0" text="Series" />
+            <TableColumn fx:id="exobjectif" prefWidth="165.0" text="Objectif" />
+            <TableColumn fx:id="exniveaudiff" prefWidth="174.0" text="NiveauDifficulte" />
+        </columns>
+      </TableView>
+      <Button fx:id="backtoex" layoutX="224.0" layoutY="610.0" mnemonicParsing="false" onAction="#backtoexercices" prefHeight="51.0" prefWidth="119.0" style="-fx-background-color: #256790;" text="Ajouter" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font></Button>
+      <Button fx:id="modex" layoutX="376.0" layoutY="610.0" mnemonicParsing="false" onAction="#modifierexercices" prefHeight="51.0" prefWidth="112.0" style="-fx-background-color: #256790;" text="Modifier" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Button>
+      <Button fx:id="suppexercice" layoutX="525.0" layoutY="610.0" mnemonicParsing="false" onAction="#supprimmerexercice" prefHeight="51.0" prefWidth="125.0" style="-fx-background-color: #256790;" text="Supprimmer" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font></Button>
+      <Button fx:id="displayex" layoutX="84.0" layoutY="610.0" mnemonicParsing="false" onAction="#displayexercices" prefHeight="51.0" prefWidth="119.0" style="-fx-background-color: #256790;" text="Display" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font></Button>
+      <Button fx:id="gotoact" layoutX="909.0" layoutY="688.0" mnemonicParsing="false" onAction="#gotoactivites" prefHeight="51.0" prefWidth="112.0" style="-fx-background-color: #256790;" text="Activites" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font></Button>
+      <Label layoutX="488.0" layoutY="42.0" prefHeight="73.0" prefWidth="270.0" text="Exercices" textFill="#345a8a">
+         <font>
+            <Font name="System Bold" size="51.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="312.0" fitWidth="440.0" layoutX="729.0" layoutY="226.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../image/PREPAR~1.PNG" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

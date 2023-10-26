@@ -11,15 +11,14 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: white;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MenuCompetitionController">
+<AnchorPane id="AnchorPane" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #d7e5f4;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MenuCompetitionController">
     <stylesheets>
         <URL value="@menucompetition.css" />
     </stylesheets>
    <children>
-      <VBox prefHeight="720.0" prefWidth="320.0" style="-fx-background-color: #999999;">
+      <VBox prefHeight="804.0" prefWidth="320.0" style="-fx-background-color: #256790;">
          <children>
-            <Button fx:id="adc" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#addcomp" prefHeight="90.0" prefWidth="320.0" style="-fx-background-color: transparent;" text="   Add New Competition">
+            <Button fx:id="adc" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#addcomp" prefHeight="90.0" prefWidth="320.0" style="-fx-background-color: transparent;" text="   Add New Competition" textFill="WHITE">
                <graphic>
                   <FontAwesomeIconView glyphName="PLUS" size="35" />
                </graphic>
@@ -33,7 +32,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="ans" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="100.0" mnemonicParsing="false" onAction="#addsport" prefHeight="90.0" prefWidth="320.0" style="-fx-background-color: transparent;" text="  Add New Sport">
+            <Button fx:id="ans" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="100.0" mnemonicParsing="false" onAction="#addsport" prefHeight="90.0" prefWidth="320.0" style="-fx-background-color: transparent;" text="  Add New Sport" textFill="WHITE">
                <padding>
                   <Insets left="40.0" />
                </padding>
@@ -47,7 +46,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="mc" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#manage" prefHeight="90.0" prefWidth="320.0" style="-fx-background-color: transparent;" text="  Manage Competitions">
+            <Button fx:id="mc" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#manage" prefHeight="90.0" prefWidth="320.0" style="-fx-background-color: transparent;" text="  Manage Competitions" textFill="WHITE">
                <padding>
                   <Insets left="40.0" />
                </padding>
@@ -61,7 +60,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="managesports" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="190.0" mnemonicParsing="false" onAction="#editSports" prefHeight="90.0" prefWidth="320.0" style="-fx-background-color: transparent;" text="  Manage Sports">
+            <Button fx:id="managesports" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="190.0" mnemonicParsing="false" onAction="#editSports" prefHeight="90.0" prefWidth="320.0" style="-fx-background-color: transparent;" text="  Manage Sports" textFill="WHITE">
                <padding>
                   <Insets left="40.0" />
                </padding>
@@ -75,7 +74,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="competitions" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="280.0" mnemonicParsing="false" onAction="#enterCompetitons" prefHeight="90.0" prefWidth="320.0" style="-fx-background-color: transparent;" text="  Competitons List">
+            <Button fx:id="competitions" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="280.0" mnemonicParsing="false" onAction="#enterCompetitons" prefHeight="90.0" prefWidth="320.0" style="-fx-background-color: transparent;" text="  Competitons List" textFill="WHITE">
                <padding>
                   <Insets left="40.0" />
                </padding>
@@ -89,17 +88,35 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
+            <Button fx:id="led" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="370.0" mnemonicParsing="false" onAction="#gotoleaderboard" prefHeight="90.0" prefWidth="320.0" style="-fx-background-color: transparent;" text="   Leaderboard" textFill="WHITE">
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+               <font>
+                  <Font name="Times New Roman" size="22.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="37.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/leaderboard.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
          </children>
       </VBox>
-      <ImageView fitHeight="277.0" fitWidth="394.0" layoutX="1057.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="499.0" fitWidth="722.0" layoutX="445.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/Fitnatic.jpg" />
+            <Image url="@../images/tournoi__1_-removebg-preview.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="497.0" fitWidth="661.0" layoutX="411.0" layoutY="177.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/tournoi%20(1).jpg" />
-         </image>
-      </ImageView>
+      <FontAwesomeIconView fx:id="BACK" glyphName="BACKWARD" layoutX="365.0" layoutY="58.0" onMouseClicked="#backtoMenu" size="30">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </FontAwesomeIconView>
    </children>
 </AnchorPane>
